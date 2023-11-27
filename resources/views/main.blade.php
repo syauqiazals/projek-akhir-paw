@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>project PAW</title>
+    <title> @yield('title')project PAW</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,21 +41,21 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="{{ asset('style/images/logoPaw.png') }}" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Fitur Menu</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Stok Bahan</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Rekapan Penjualan</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">lain lain</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">List Menu</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Stok Bahan</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Rekapan Penjualan</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children active dropdown">
@@ -63,13 +63,7 @@
                             aria-expanded="false"> <i class="menu-icon fa fa-table"></i>List Pegawai</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="tables-basic.html">Detail Pegawai</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Lain lain</a></li>
                         </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -135,7 +129,7 @@
 
                             <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="logout"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -165,75 +159,10 @@
 
         </header><!-- /header -->
         <!-- Header-->
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content mt-3">
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-                        <h4 class="mb-0">
-                            <span class="count">10468</span> 
-                        </h4>
-                        <p class="text-light">List Menu</p>
-                        <a href="#" class="text-light d-block mb-3">view detail</a>
-                    </div>
-                </div>
-            </div>
-            <!--/.col-->
+        @yield('breadcrumbs')
+        
+        @yield('content')
 
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-2">
-                    <div class="card-body pb-0">
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Stok Bahan</p>
-                        <a href="#" class="text-light d-block mb-3">view detail</a>
-                    </div>
-                </div>
-            </div>
-            <!--/.col-->
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-3">
-                    <div class="card-body pb-0">
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Rekapan Penjualan</p>
-                        <a href="#" class="text-light d-block mb-3">view detail</a>
-                    </div>
-                </div>
-            </div>
-            <!--/.col-->
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-4">
-                    <div class="card-body pb-0">
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">List Pegawai</p>
-                        <a href="#" class="text-light d-block mb-3">view detail</a>
-                    </div>
-                </div>
-            </div>
 
 </body>
 
