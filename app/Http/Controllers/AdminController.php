@@ -9,4 +9,10 @@ class AdminController extends Controller
     function index(){
         return view('home');
     }
+
+    function rekap(){
+        return view('tambahrekap');
+    }
+
+    
 }

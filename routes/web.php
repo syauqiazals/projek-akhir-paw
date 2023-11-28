@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\pegawaiController;
 use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,20 @@ Route::middleware(['guest'])->group(function(){
     Route::post('/', [SesiController::class, 'login']);
 });
 
-Route::get('/home', function(){
-    return redirect('home');
-});
+Route::get('/home', [AdminController::class,'index']);
+
+Route::get('/rekapan', [AdminController::class,'rekap']);
+
+Route::get('/tables-basic', [pegawaiController::class, 'index']);
+Route::get('/pegawai', [pegawaiController::class, 'index']);
+Route::get('/create', [pegawaiController::class, 'create']);
+Route::post('/pegawai', [pegawaiController::class, 'store']);
+Route::get('/pegawai/{nik}/edit', [pegawaiController::class, 'edit']);
+Route::get('/pegawai/{nik}/show', [pegawaiController::class, 'show']);
+Route::put('/pegawai/{id}', [pegawaiController::class, 'update']);
+Route::delete('/pegawai/{id}', [pegawaiController::class, 'destroy']);
+
+// Route::get('/rekappegawai', [AdminController::class,'pegawai']);
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/main', [AdminController::class,'index']);

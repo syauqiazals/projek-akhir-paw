@@ -8,6 +8,7 @@
         <div class="page-header float-left">
             <div class="page-title">
                 <h1>Selamat Datang {{ Auth::user()->name}}</h1>
+                {{-- <h1>Selamat Datang</h1> --}}
             </div>
         </div>
     </div>
@@ -58,7 +59,7 @@
                     <span class="count">10468</span>
                 </h4>
                 <p class="text-light">Rekapan Penjualan</p>
-                <a href="#" class="text-light d-block mb-3">view detail</a> 
+                <a href="rekapan" class="text-light d-block mb-3">view detail</a> 
             </div>
         </div>
     </div>
@@ -71,7 +72,7 @@
                     <span class="count">10468</span>
                 </h4>
                 <p class="text-light">List Pegawai</p>
-                <a href="#" class="text-light d-block mb-3">view detail</a>
+                <a href="tables-basic" class="text-light d-block mb-3">view detail</a>
             </div>
         </div>
     </div>
