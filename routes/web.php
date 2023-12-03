@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\pegawaiController;
+use App\Http\Controllers\RekapController;
 use App\Http\Controllers\SesiController;
+use App\Http\Controllers\bahanController;
+use App\Http\Controllers\menuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +20,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['guest'])->group(function(){
-    Route::get('/', [SesiController::class, 'index'])->name('login');
+    Route::get('/', [SesiController::class, 'first'])->name('login');
     Route::post('/', [SesiController::class, 'login']);
 });
 
 Route::get('/home', [AdminController::class,'index']);
 
-Route::get('/rekapan', [AdminController::class,'rekap']);
+// Route::get('/rekapan', [AdminController::class,'rekap']);
 
 Route::get('/tables-basic', [pegawaiController::class, 'index']);
 Route::get('/pegawai', [pegawaiController::class, 'index']);
@@ -37,6 +40,23 @@ Route::delete('/pegawai/{id}', [pegawaiController::class, 'destroy']);
 // Route::get('/rekappegawai', [AdminController::class,'pegawai']);
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/main', [AdminController::class,'index']);
+    Route::get('/main', [AdminController::class,'first']);
     Route::get('/logout', [SesiController::class,'logout']);
 });
+
+Route::resource('penjualan', RekapController::class);
+
+Route::get('/listStok', [bahanController::class, 'bahanbaku'])->name('listStok');
+Route::get('listStok/add', [bahanController::class, 'add']);
+Route::post('listStok', [bahanController::class, 'addProcess']);
+Route::get('listStok/edit/{id}', [bahanController::class, 'edit']);
+Route::patch('listStok/{id}', [bahanController::class, 'editProcess']);
+Route::delete('listStok/{id}', [bahanController::class, 'delete']);
+
+Route::get('menu', [menuController::class, 'daftarMenu']);
+Route::get('menu/detailMenu/{id}', [menuController::class, 'detailMenu']);
+Route::get('menu/add', [menuController::class, 'add']);
+Route::post('menu', [menuController::class, 'addProcess']);
+Route::get('menu/edit/{id}', [menuController::class, 'edit']);
+Route::patch('menu/{id}', [menuController::class, 'editProcess']);
+Route::delete('menu/{id}', [menuController::class, 'delete']);

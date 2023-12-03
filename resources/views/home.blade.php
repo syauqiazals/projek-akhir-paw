@@ -30,10 +30,10 @@
         <div class="card text-white bg-flat-color-1">
             <div class="card-body pb-0">
                 <h4 class="mb-0">
-                    <span class="count">10468</span> 
+                    <span class="count">List Menu</span> 
                 </h4>
-                <p class="text-light">List Menu</p>
-                <a href="#" class="text-light d-block mb-3">view detail</a>
+                <p class="text-light">Kelola daftar menu yang tersedia</p>
+                <a href="{{ url('menu') }}" class="text-light d-block mb-3">view detail</a>
             </div>
         </div>
     </div>
@@ -43,10 +43,10 @@
         <div class="card text-white bg-flat-color-2">
             <div class="card-body pb-0">
                 <h4 class="mb-0">
-                    <span class="count">10468</span>
+                    <span class="count">Stok Bahan</span>
                 </h4>
-                <p class="text-light">Stok Bahan</p>
-                <a href="#" class="text-light d-block mb-3">view detail</a>
+                <p class="text-light">Manajemen inventaris bahan baku</p>
+                <a href="{{ url('listStok') }}" class="text-light d-block mb-3">view detail</a>
             </div>
         </div>
     </div>
@@ -56,10 +56,10 @@
         <div class="card text-white bg-flat-color-3">
             <div class="card-body pb-0">
                 <h4 class="mb-0">
-                    <span class="count">10468</span>
+                    <span class="count">Rekapan Penjualan</span>
                 </h4>
-                <p class="text-light">Rekapan Penjualan</p>
-                <a href="rekapan" class="text-light d-block mb-3">view detail</a> 
+                <p class="text-light">Pantau dan analisis data penjualan</p>
+                <a href="penjualan" class="text-light d-block mb-3">view detail</a> 
             </div>
         </div>
     </div>
@@ -69,9 +69,9 @@
         <div class="card text-white bg-flat-color-4">
             <div class="card-body pb-0">
                 <h4 class="mb-0">
-                    <span class="count">10468</span>
+                    <span class="count">List Pegawai</span>
                 </h4>
-                <p class="text-light">List Pegawai</p>
+                <p class="text-light">Kelola informasi pegawai</p><br>
                 <a href="tables-basic" class="text-light d-block mb-3">view detail</a>
             </div>
         </div>

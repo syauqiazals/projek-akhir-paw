@@ -93,24 +93,7 @@
                             </form>
                         </div>
 
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">5</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
-                                <a class="dropdown-item media bg-flat-color-1" href="#">
-                                    <i class="fa fa-check"></i>
-                                    <p>Server #1 overloaded.</p>
-                                </a>
-                                <a class="dropdown-item media bg-flat-color-4" href="#">
-                                    <i class="fa fa-info"></i>
-                                    <p>Server #2 overloaded.</p>
-                                </a>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
 
@@ -122,13 +105,6 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
-                                    class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
                             <a class="nav-link" href="logout"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
@@ -163,9 +139,6 @@
         
         @yield('content')
 
-        @yield('rekapbreadcrumbs')
-
-        @yield('rekapcontent')
 
         <main class="container">
             @include('komponen.pesan')
@@ -173,6 +146,28 @@
             @yield('konten')
         </main>
         
+        <main class="fiturRekapan">
+            @yield('rekapbreadcrumbs')
+
+            @yield('rekapKonten')
+        </main>
+        <script src="assets/js/lib/data-table/datatables.min.js"></script>
+        <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+        <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+        <script src="assets/js/lib/data-table/jszip.min.js"></script>
+        <script src="assets/js/lib/data-table/pdfmake.min.js"></script>
+        <script src="assets/js/lib/data-table/vfs_fonts.js"></script>
+        <script src="assets/js/lib/data-table/buttons.html5.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
+        <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
+        <script src="assets/js/lib/data-table/datatables-init.js"></script>
+        
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bootstrap-data-table-export').DataTable();
+        });
+    </script>
 </body>
 
 </html>
