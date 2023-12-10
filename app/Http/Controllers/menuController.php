@@ -52,7 +52,7 @@ class menuController extends Controller {
     }
 
     public function edit($id){
-        $menu = DB::table('program_paw')->where('id', $id)->first();
+        $editmenu = DB::table('program_paw')->where('id', $id)->first();
         return view('menu/editMenu', compact('menu'));
     }
     
@@ -64,19 +64,20 @@ class menuController extends Controller {
             'jenis_menu' => 'required'
         ]);
     
-        DB::table('program_paw')->where('id', $id)
+        $affectedRows = DB::table('program_paw')->where('id', $id)
         ->update([
             'id' => $request->id,
             'nama_menu' => $request->nama_menu, 
             'bahan_baku' => $request->bahan_baku,
             'jenis_menu' => $request->jenis_menu
         ]);
-    
+
+        DB::table('menu')->where('id', $id)->update($menu);
         return redirect('menu')->with('status', 'Menu berhasil diubah');
     }      
 
     public function delete($id){
-        DB::table('program_paw')->where('id','$id')->delete();
+        DB::table('program_paw')->where('id',$id)->delete();
         return redirect('menu')->with('status', 'Menu berhasil dihapus');
     }
 
